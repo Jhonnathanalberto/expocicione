@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> probando canvas </title>
+	<script>
+window.onload = function(){
+    //Reecibimos el elemento canvas
+	var elemento = document.getElementById('micanvas');
+    //comprovacion sobre si encontramos un elemento
+    //y podemos extraer su contexto con getcontext(),que indica compativilidad con canvas
+	if (elemento && elemento.getContext){
+        //Accedo al contexto de '2d'
+		var contexto = elemento.getContext('2d');
+		if (contexto){
+            // si tengo contexto 2d es que todo ha ido bien y puedo empezar a dibujar el camvas
+			contexto.fillRect(0, 0, 550, 100);
+            //cambio de color de estilo de dibujo a rojo
+			contexto.fillStyle = '#cc0000';
+			//dibuja otro rectangulo
+			contexto.fillRect(10,10,100,70);
+        }
+    }
+}
+
+</script>
+</head>
+
+<body>
+
+<canvas id="micanvas" width="200" height="100">
+//Este texto se muestra cuando los navegadores no son compatibles con canvas.
+<br>
+por ,utilizar firefox,chrome,safari u opera	
+
+</canvas>
+
+</body>
+</html>
